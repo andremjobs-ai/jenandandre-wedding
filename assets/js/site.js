@@ -105,16 +105,24 @@
         document.getElementById("gate-err").hidden = false;
         return;
       }
+      var mc = window.SITE && window.SITE.mailchimpAction;
       var ep = window.SITE && window.SITE.emailEndpoint;
-      if (ep) {
-        try {
+      try {
+        if (mc) {
+          // Mailchimp embedded-form post. The response is opaque (no-cors), which is expected.
+          var q = new URL(mc).searchParams;
+          var body = new URLSearchParams();
+          body.set("EMAIL", email);
+          body.set("b_" + q.get("u") + "_" + q.get("id"), ""); // Mailchimp's bot-trap field, left empty
+          fetch(mc, { method: "POST", mode: "no-cors", body: body }).catch(function () {});
+        } else if (ep) {
           fetch(ep, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: email, lang: lang, page: page })
           }).catch(function () {});
-        } catch (err) {}
-      }
+        }
+      } catch (err) {}
       store(false, GATE_KEY, "1");
       renderGate();
     });

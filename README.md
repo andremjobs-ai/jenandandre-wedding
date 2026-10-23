@@ -16,10 +16,11 @@ Open `index.html` in a browser, or run `python3 -m http.server` in this folder a
 
 ## Before launch
 
-1. **Email capture and RSVPs are not saved yet.** Set `emailEndpoint` and `rsvpEndpoint` in `assets/js/config.js` to a form service or small function that writes to a sheet or mailing list (for example Formspree, Google Apps Script, or a Cloudflare Worker). Until then the welcome screen still lets guests in but stores nothing, and the RSVP form says RSVPs are not open yet.
-2. Fill in every `[bracketed]` placeholder in `assets/js/i18n.js` and have family review the Spanish.
-3. Add real photos (replace the `photo-frame` placeholders).
-4. `robots.txt` and a `noindex` tag keep search engines away. Remove both if you ever want the site public in search.
+1. **Email capture (Mailchimp).** In Mailchimp, create an audience, then Audience > Signup forms > Embedded forms, and copy the form `action` URL into `mailchimpAction` in `assets/js/config.js`. The welcome screen then adds each email to that audience.
+2. **RSVPs (Google Sheet).** The sheet "Jennifer & Andre Wedding RSVPs" (tab `RSVPs`) has columns Timestamp, Name, Email, Attending, Party size, Dietary requirements, Message, Language. A small Google Apps Script web app attached to the sheet receives the form post and appends a row; paste its URL into `rsvpEndpoint`. Until then the RSVP form says RSVPs are not open yet.
+3. Fill in every `[bracketed]` placeholder in `assets/js/i18n.js` and have family review the Spanish.
+4. Add real photos (replace the `photo-frame` placeholders).
+5. `robots.txt` and a `noindex` tag keep search engines away. Remove both if you ever want the site public in search.
 
 ## Notes
 
