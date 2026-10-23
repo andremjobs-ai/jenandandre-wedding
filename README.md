@@ -25,4 +25,4 @@ Open `index.html` in a browser, or run `python3 -m http.server` in this folder a
 ## Notes
 
 - The welcome screen is a soft gate. It collects emails but does not protect the pages from someone who skips it. For real privacy, add a shared passcode or host-level password.
-- Hosting: Cloudflare Pages, Netlify or Vercel. Connect this repo, no build command, publish directory is the repo root. Then point the domain (jenandandre2027.com) at the host.
+- Hosting: Cloudflare Pages, Netlify or Vercel. Connect this repo, no build command, publish directory is the repo root. Then point the domain (jenandandre2027.wedding) at the host.
