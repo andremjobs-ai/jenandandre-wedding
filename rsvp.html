@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>RSVP | Jennifer & Andre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="rsvp" data-title="rsvp.title">
+<div id="site-header"></div>
+<main id="main">
+<section class="section">
+<h1 class="page-title" data-i18n="nav.rsvp">RSVP</h1>
+<p class="page-sub" data-i18n="rsvp.by">Kindly reply by [RSVP DEADLINE]</p>
+<form id="rsvp-form" class="card-form" novalidate>
+<div class="field"><label for="name" data-i18n="f.name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+<div class="field"><label for="email" data-i18n="f.email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+<div class="field"><label for="attending" data-i18n="f.attend">Will you attend?</label><select id="attending" name="attending"><option value="yes" data-i18n="f.yes">Joyfully accepts</option><option value="no" data-i18n="f.no">Regretfully declines</option></select></div>
+<div class="field"><label for="party" data-i18n="f.party">Number of guests in your party</label><input id="party" name="party" type="number" min="1" max="10" value="1"></div>
+<div class="field"><label for="diet" data-i18n="f.diet">Dietary requirements</label><input id="diet" name="diet" type="text"></div>
+<div class="field"><label for="message" data-i18n="f.msg">A note for us (optional)</label><textarea id="message" name="message"></textarea></div>
+<input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+<p id="rsvp-msg" class="form-msg" role="status" hidden></p>
+<button class="btn" type="submit" data-i18n="f.send">Send RSVP</button>
+</form>
+</section>
+</main>
+<div id="site-footer"></div>
+<noscript><p style="padding:24px;text-align:center">Please turn on JavaScript to view this site.</p></noscript>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
