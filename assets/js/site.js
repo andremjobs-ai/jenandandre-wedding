@@ -118,7 +118,7 @@
         } else if (ep) {
           fetch(ep, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
             body: JSON.stringify({ email: email, lang: lang, page: page })
           }).catch(function () {});
         }
@@ -153,7 +153,7 @@
       if (!data.name || !/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(data.email)) { show("f.invalid", true); return; }
       var ep = window.SITE && window.SITE.rsvpEndpoint;
       if (!ep) { show("f.notLive", true); return; }
-      fetch(ep, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
+      fetch(ep, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(data) })
         .then(function (r) { if (!r.ok) throw new Error("bad"); show("f.ok", false); form.reset(); })
         .catch(function () { show("f.err", true); });
     });
